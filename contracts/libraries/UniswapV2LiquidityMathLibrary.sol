@@ -45,7 +45,7 @@ library UniswapV2LiquidityMathLibrary {
         address tokenA,
         address tokenB,
         uint256 truePriceTokenA,
-        uint256 truePriceTokenB, string memory initCodeHashHex
+        uint256 truePriceTokenB, bytes32 initCodeHashHex
     ) view internal returns (uint256 reserveA, uint256 reserveB) {
         // first get reserves before the swap
         (reserveA, reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB, initCodeHashHex);
@@ -101,7 +101,7 @@ library UniswapV2LiquidityMathLibrary {
         address factory,
         address tokenA,
         address tokenB,
-        uint256 liquidityAmount, string memory initCodeHashHex
+        uint256 liquidityAmount, bytes32 initCodeHashHex
     ) internal view returns (uint256 tokenAAmount, uint256 tokenBAmount) {
         (uint256 reservesA, uint256 reservesB) = UniswapV2Library.getReserves(factory, tokenA, tokenB, initCodeHashHex);
         IUniswapV2Pair pair = IUniswapV2Pair(UniswapV2Library.pairFor(factory, tokenA, tokenB, initCodeHashHex));
@@ -119,7 +119,7 @@ library UniswapV2LiquidityMathLibrary {
         address tokenB,
         uint256 truePriceTokenA,
         uint256 truePriceTokenB,
-        uint256 liquidityAmount, string memory initCodeHashHex
+        uint256 liquidityAmount, bytes32 initCodeHashHex
     ) internal view returns (
         uint256 tokenAAmount,
         uint256 tokenBAmount

@@ -11,14 +11,14 @@ import './interfaces/IWETH.sol';
 contract UniswapV2Router01 is IUniswapV2Router01 {
     address public immutable override factory;
     address public immutable override WETH;
-    string public initCodeHashHex;
+    bytes32 public initCodeHashHex;
 
     modifier ensure(uint deadline) {
         require(deadline >= block.timestamp, 'UniswapV2Router: EXPIRED');
         _;
     }
 
-    constructor(address _factory, address _WETH, string memory _initCodeHashHex) public {
+    constructor(address _factory, address _WETH, bytes32 _initCodeHashHex) public {
         factory = _factory;
         WETH = _WETH;
         initCodeHashHex = _initCodeHashHex;

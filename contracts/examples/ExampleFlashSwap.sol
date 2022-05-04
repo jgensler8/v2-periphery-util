@@ -13,9 +13,9 @@ contract ExampleFlashSwap is IUniswapV2Callee {
     IUniswapV1Factory immutable factoryV1;
     address immutable factory;
     IWETH immutable WETH;
-    string initCodeHashHex;
+    bytes32 initCodeHashHex;
 
-    constructor(address _factory, address _factoryV1, address router, string memory _initCodeHashHex) public {
+    constructor(address _factory, address _factoryV1, address router, bytes32 _initCodeHashHex) public {
         factoryV1 = IUniswapV1Factory(_factoryV1);
         factory = _factory;
         WETH = IWETH(IUniswapV2Router01(router).WETH());

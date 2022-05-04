@@ -16,7 +16,7 @@ contract ExampleComputeLiquidityValue {
         address tokenA,
         address tokenB,
         uint256 truePriceTokenA,
-        uint256 truePriceTokenB, string calldata initCodeHashHex
+        uint256 truePriceTokenB, bytes32 initCodeHashHex
     ) external view returns (uint256 reserveA, uint256 reserveB) {
         return UniswapV2LiquidityMathLibrary.getReservesAfterArbitrage(
             factory,
@@ -31,7 +31,7 @@ contract ExampleComputeLiquidityValue {
     function getLiquidityValue(
         address tokenA,
         address tokenB,
-        uint256 liquidityAmount, string calldata initCodeHashHex
+        uint256 liquidityAmount, bytes32 initCodeHashHex
     ) external view returns (
         uint256 tokenAAmount,
         uint256 tokenBAmount
@@ -50,7 +50,7 @@ contract ExampleComputeLiquidityValue {
         address tokenB,
         uint256 truePriceTokenA,
         uint256 truePriceTokenB,
-        uint256 liquidityAmount, string calldata initCodeHashHex
+        uint256 liquidityAmount, bytes32 initCodeHashHex
     ) external view returns (
         uint256 tokenAAmount,
         uint256 tokenBAmount
@@ -71,7 +71,7 @@ contract ExampleComputeLiquidityValue {
         address tokenB,
         uint256 truePriceTokenA,
         uint256 truePriceTokenB,
-        uint256 liquidityAmount, string calldata initCodeHashHex
+        uint256 liquidityAmount, bytes32 initCodeHashHex
     ) external view returns (
         uint256
     ) {

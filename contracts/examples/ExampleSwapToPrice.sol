@@ -15,9 +15,9 @@ contract ExampleSwapToPrice {
 
     IUniswapV2Router01 public immutable router;
     address public immutable factory;
-    string public initCodeHashHex;
+    bytes32 public initCodeHashHex;
 
-    constructor(address factory_, IUniswapV2Router01 router_, string memory _initCodeHashHex) public {
+    constructor(address factory_, IUniswapV2Router01 router_, bytes32 _initCodeHashHex) public {
         factory = factory_;
         router = router_;
         initCodeHashHex = _initCodeHashHex;
