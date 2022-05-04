@@ -9,6 +9,7 @@
 
 * drilled byte32 into constructor and various functions instead of hardcoded string ([see this SO comment](https://ethereum.stackexchange.com/questions/114170/unit-testing-uniswapv2pair-function-call-to-a-non-contract-account#comment137427_114170))
 * contracts compile but tests are not working
+* Note: alternative is to not recompile any Uniswap v2 contracts and rely on bytecode inside the npm package's `build/` directory. Bytecode is stored directly in the various ABI JSON files. See [this project](https://github.com/AlexBHarley/uniswap-v2-deploy-plugin/blob/master/src/deployer/UniswapV2Deployer.ts#L7-L10) for more details
 
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
