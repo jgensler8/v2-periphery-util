@@ -1,5 +1,5 @@
 {
-  "name": "@uniswap/v2-periphery",
+  "name": "@jgensler8_2/v2-periphery-util",
   "version": "1.1.0-beta.0",
   "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
   "engines": {
@@ -41,7 +41,8 @@
     "compile": "waffle .waffle.json",
     "postcompile": "yarn copy-v1-artifacts",
     "pretest": "yarn compile",
-    "test": "mocha",
+    "test": "mocha --version",
+    "test2": "mocha",
     "prepublishOnly": "yarn test"
   },
   "license": "GPL-3.0-or-later"
