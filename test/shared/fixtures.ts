@@ -17,7 +17,8 @@ import UniswapV2Router02 from '../../build/UniswapV2Router02.json'
 import RouterEventEmitter from '../../build/RouterEventEmitter.json'
 
 const overrides = {
-  gasLimit: 9999999
+  // gasLimit: 9999999
+  gasLimit: 30000000
 }
 
 interface V2Fixture {
@@ -44,6 +45,8 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
   const WETH = await deployContract(wallet, WETH9)
   const WETHPartner = await deployContract(wallet, ERC20, [expandTo18Decimals(10000)])
 
+  const initCodeHashHex = '96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f'
+
   // deploy V1
   const factoryV1 = await deployContract(wallet, UniswapV1Factory, [])
   await factoryV1.initializeFactory((await deployContract(wallet, UniswapV1Exchange, [])).address)
@@ -52,8 +55,8 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
   const factoryV2 = await deployContract(wallet, UniswapV2Factory, [wallet.address])
 
   // deploy routers
-  const router01 = await deployContract(wallet, UniswapV2Router01, [factoryV2.address, WETH.address], overrides)
-  const router02 = await deployContract(wallet, UniswapV2Router02, [factoryV2.address, WETH.address], overrides)
+  const router01 = await deployContract(wallet, UniswapV2Router01, [factoryV2.address, WETH.address, initCodeHashHex], overrides)
+  const router02 = await deployContract(wallet, UniswapV2Router02, [factoryV2.address, WETH.address, initCodeHashHex], overrides)
 
   // event emitter for testing
   const routerEventEmitter = await deployContract(wallet, RouterEventEmitter, [])

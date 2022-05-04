@@ -24,8 +24,8 @@ contract ExampleOracleSimple {
     FixedPoint.uq112x112 public price0Average;
     FixedPoint.uq112x112 public price1Average;
 
-    constructor(address factory, address tokenA, address tokenB) public {
-        IUniswapV2Pair _pair = IUniswapV2Pair(UniswapV2Library.pairFor(factory, tokenA, tokenB));
+    constructor(address factory, address tokenA, address tokenB, string memory initCodeHashHex) public {
+        IUniswapV2Pair _pair = IUniswapV2Pair(UniswapV2Library.pairFor(factory, tokenA, tokenB, initCodeHashHex));
         pair = _pair;
         token0 = _pair.token0();
         token1 = _pair.token1();

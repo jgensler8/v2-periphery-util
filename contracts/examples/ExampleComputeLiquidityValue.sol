@@ -16,14 +16,14 @@ contract ExampleComputeLiquidityValue {
         address tokenA,
         address tokenB,
         uint256 truePriceTokenA,
-        uint256 truePriceTokenB
+        uint256 truePriceTokenB, string calldata initCodeHashHex
     ) external view returns (uint256 reserveA, uint256 reserveB) {
         return UniswapV2LiquidityMathLibrary.getReservesAfterArbitrage(
             factory,
             tokenA,
             tokenB,
             truePriceTokenA,
-            truePriceTokenB
+            truePriceTokenB, initCodeHashHex
         );
     }
 
@@ -31,7 +31,7 @@ contract ExampleComputeLiquidityValue {
     function getLiquidityValue(
         address tokenA,
         address tokenB,
-        uint256 liquidityAmount
+        uint256 liquidityAmount, string calldata initCodeHashHex
     ) external view returns (
         uint256 tokenAAmount,
         uint256 tokenBAmount
@@ -40,7 +40,7 @@ contract ExampleComputeLiquidityValue {
             factory,
             tokenA,
             tokenB,
-            liquidityAmount
+            liquidityAmount, initCodeHashHex
         );
     }
 
@@ -50,7 +50,7 @@ contract ExampleComputeLiquidityValue {
         address tokenB,
         uint256 truePriceTokenA,
         uint256 truePriceTokenB,
-        uint256 liquidityAmount
+        uint256 liquidityAmount, string calldata initCodeHashHex
     ) external view returns (
         uint256 tokenAAmount,
         uint256 tokenBAmount
@@ -61,7 +61,7 @@ contract ExampleComputeLiquidityValue {
             tokenB,
             truePriceTokenA,
             truePriceTokenB,
-            liquidityAmount
+            liquidityAmount, initCodeHashHex
         );
     }
 
@@ -71,7 +71,7 @@ contract ExampleComputeLiquidityValue {
         address tokenB,
         uint256 truePriceTokenA,
         uint256 truePriceTokenB,
-        uint256 liquidityAmount
+        uint256 liquidityAmount, string calldata initCodeHashHex
     ) external view returns (
         uint256
     ) {
@@ -82,7 +82,7 @@ contract ExampleComputeLiquidityValue {
             tokenB,
             truePriceTokenA,
             truePriceTokenB,
-            liquidityAmount
+            liquidityAmount, initCodeHashHex
         );
         uint gasAfter = gasleft();
         return gasBefore - gasAfter;

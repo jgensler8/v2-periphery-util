@@ -15,10 +15,12 @@ contract ExampleSwapToPrice {
 
     IUniswapV2Router01 public immutable router;
     address public immutable factory;
+    string public initCodeHashHex;
 
-    constructor(address factory_, IUniswapV2Router01 router_) public {
+    constructor(address factory_, IUniswapV2Router01 router_, string memory _initCodeHashHex) public {
         factory = factory_;
         router = router_;
+        initCodeHashHex = _initCodeHashHex;
     }
 
     // swaps an amount of either token such that the trade is profit-maximizing, given an external true price
@@ -42,7 +44,7 @@ contract ExampleSwapToPrice {
         bool aToB;
         uint256 amountIn;
         {
-            (uint256 reserveA, uint256 reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB);
+            (uint256 reserveA, uint256 reserveB) = UniswapV2Library.getReserves(factory, tokenA, tokenB, initCodeHashHex);
             (aToB, amountIn) = UniswapV2LiquidityMathLibrary.computeProfitMaximizingTrade(
                 truePriceTokenA, truePriceTokenB,
                 reserveA, reserveB
