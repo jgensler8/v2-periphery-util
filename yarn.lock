@@ -179,6 +179,11 @@
     "@ethersproject/properties" "^5.0.7"
     "@ethersproject/strings" "^5.0.8"
 
+"@jgensler8_2/uniswap-lib@4.0.1-alpha":
+  "integrity" "sha512-z/0q9uK2FXENY/23SE2DdVWOPyt3HQ0ymdn/gcbX3fx/HV06gRCbSuHpAlN17/RIhu6rEM0Jg50D7tRvHeHQOw=="
+  "resolved" "https://registry.npmjs.org/@jgensler8_2/uniswap-lib/-/uniswap-lib-4.0.1-alpha.tgz"
+  "version" "4.0.1-alpha"
+
 "@resolver-engine/core@^0.3.3":
   "integrity" "sha512-eB8nEbKDJJBi5p5SrvrvILn4a0h42bKtbCTri3ZxCGt6UvoQyp7HnGOfki944bUjBSHKK3RvgfViHn+kqdXtnQ=="
   "resolved" "https://registry.npmjs.org/@resolver-engine/core/-/core-0.3.3.tgz"
@@ -281,11 +286,6 @@
   "version" "4.0.3"
   dependencies:
     "@types/node" "*"
-
-"@uniswap/lib@4.0.1-alpha":
-  "integrity" "sha512-f6UIliwBbRsgVLxIaBANF6w09tYqc6Y/qXdsrbEmXHyFA7ILiKrIwRFXe1yOg8M3cksgVsO9N7yuL2DdCGQKBA=="
-  "resolved" "https://registry.npmjs.org/@uniswap/lib/-/lib-4.0.1-alpha.tgz"
-  "version" "4.0.1-alpha"
 
 "@uniswap/v2-core@1.0.0":
   "integrity" "sha512-BJiXrBGnN8mti7saW49MXwxDBRFiWemGetE58q8zgfnPPzQKq55ADltEILqOt6VFZ22kVeVKbF8gVd8aY3l7pA=="

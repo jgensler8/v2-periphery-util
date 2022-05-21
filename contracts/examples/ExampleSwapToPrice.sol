@@ -1,8 +1,8 @@
 pragma solidity =0.6.6;
 
 import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol';
-import '@uniswap/lib/contracts/libraries/Babylonian.sol';
-import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+import '@jgensler8_2/uniswap-lib/contracts/libraries/Babylonian.sol';
+import '@jgensler8_2/uniswap-lib/contracts/libraries/TransferHelper.sol';
 
 import '../libraries/UniswapV2LiquidityMathLibrary.sol';
 import '../interfaces/IERC20.sol';

@@ -1,6 +1,6 @@
 {
   "name": "@jgensler8_2/v2-periphery-util",
-  "version": "1.1.0-beta.2",
+  "version": "1.1.0-beta.3",
   "description": "🎚 Peripheral smart contracts for interacting with Uniswap V2",
   "engines": {
     "node": ">=10"
@@ -15,7 +15,7 @@
     "contracts"
   ],
   "dependencies": {
-    "@uniswap/lib": "4.0.1-alpha",
+    "@jgensler8_2/uniswap-lib": "4.0.1-alpha",
     "@uniswap/v2-core": "1.0.0"
   },
   "devDependencies": {
